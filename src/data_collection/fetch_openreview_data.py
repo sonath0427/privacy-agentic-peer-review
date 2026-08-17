@@ -35,6 +35,11 @@ VENUE_IDS = {
     ("ICLR", 2025): "ICLR.cc/2025/Conference",
     ("NeurIPS", 2023): "NeurIPS.cc/2023/Conference",
     ("NeurIPS", 2024): "NeurIPS.cc/2024/Conference",
+    ("ICML", 2025): "ICML.cc/2025/Conference",
+    ("ICML", 2024): "ICML.cc/2024/Conference",
+    ("ICML", 2023): "ICML.cc/2023/Conference",
+    ("UAI", 2025): "auai.org/UAI/2025/Conference",
+    ("UAI", 2024): "auai.org/UAI/2024/Conference",
 }
 
 
@@ -150,7 +155,7 @@ def download_pdf(client, note, outdir: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--venue", required=True, choices=["ICLR", "NeurIPS"])
+    parser.add_argument("--venue", required=True, choices=["ICLR", "NeurIPS", "ICML", "UAI"])
     parser.add_argument("--year", required=True, type=int)
     parser.add_argument("--outdir", required=True)
     parser.add_argument("--download-pdfs", action="store_true")
@@ -197,3 +202,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
